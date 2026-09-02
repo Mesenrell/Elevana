@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog 10 Model Mobil Listrik - Elevara</title>
+    <!-- Menghubungkan ke file CSS eksternal -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header / Navbar Ringkas & Futuristik -->
+    <header>
+        <nav>
+            <!-- Bagian Logo Futuristik Elevara -->
+            <a href="index.html" class="logo" title="Elevara Home">
+                <img src="logo.png" alt="Logo Elevara" id="brandLogo">
+                <span class="logo-text">ELEVA<span>RA</span></span>
+            </a>
+
+            <!-- Tombol Hamburger untuk Tampilan Mobile -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Buka Menu Navigasi">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Daftar Menu Navigasi -->
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#tentang">Tentang</a></li>
+                <li><a href="mobil.html" class="active">Mobil</a></li>
+                <li><a href="index.html#teknologi">Teknologi</a></li>
+                <li><a href="index.html#galeri">Galeri</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
+                <li><a href="index.html#kontak" class="nav-cta">Hubungi Kami</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Catalog Hero Section with Search & Filter -->
+    <div class="catalog-hero">
+        <h1>Koleksi Lengkap <span>10 Mobil Listrik</span> Elevara</h1>
+        <p>Temukan kendaraan listrik masa depan dengan performa tinggi, jarak tempuh terjauh, dan teknologi keselamatan mutakhir.</p>
+
+        <div class="filter-search-container">
+            <!-- Live Search Bar -->
+            <div class="search-wrapper">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="carSearchInput" placeholder="Cari nama mobil, tipe, atau spesifikasi (contoh: SUV, Sport, 500 km)...">
+            </div>
+
+            <!-- Kategori Filter -->
+            <div class="filter-bar">
+                <button class="filter-btn active" data-filter="all">Semua Kategori (10)</button>
+                <button class="filter-btn" data-filter="city">City Car (2)</button>
+                <button class="filter-btn" data-filter="suv">SUV & Crossover (2)</button>
+                <button class="filter-btn" data-filter="sedan">Sedan Mewah (1)</button>
+                <button class="filter-btn" data-filter="sport">Sport & Hypercar (3)</button>
+                <button class="filter-btn" data-filter="mpv">MPV & Truk (2)</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 10 Daftar Mobil Listrik Section -->
+    <section style="padding: 50px 6% 80px;">
+        <!-- Grid 10 Mobil -->
+        <div class="grid-3" id="carCatalogGrid">
+
+            <!-- Mobil 1: Elevara City Spark -->
+            <div class="card car-card catalog-card" data-category="city">
+                <div class="car-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=600&q=80" alt="Elevara City Spark">
+                    <span class="car-badge">Urban Eco</span>
+                </div>
+                <div class="car-card-body">
+                    <h3>Elevara City Spark (2026)</h3>
+                    <ul>
+                        <li><strong>Kategori:</strong> <span>City Car Hatchback</span></li>
+                        <li><strong>Jarak Tempuh:</strong> <span>310 km</span></li>
+                        <li><strong>Baterai:</strong> <span>42 kWh LFP</span></li>
+                        <li><strong>Akselerasi (0-100):</strong> <span>8.2 Detik</span></li>
+                        <li><strong>Harga Mulai:</strong> <span>Rp 295 Juta</span></li>
+                    </ul>
+                    <button class="btn btn-full car-detail-btn">Lihat Detail & Spesifikasi</button>
+                </div>
+            </div>
+
+            <!-- Mobil 2: Elevara Nova Cross -->
+            <div class="card car-card catalog-card" data-category="suv">
+                <div class="car-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1619767886558-efdc259cde1a?auto=format&fit=crop&w=600&q=80" alt="Elevara Nova Cross">
+                    <span class="car-badge">Best Value</span>
+                </div>
+                <div class="car-card-body">
+                    <h3>Elevara Nova Cross (2026)</h3>
+                    <ul>
+                        <li><strong>Kategori:</strong> <span>Compact Crossover</span></li>
+                        <li><strong>Jarak Tempuh:</strong> <span>420 km</span></li>
+                        <li><strong>Baterai:</strong> <span>55 kWh LFP</span></li>
+                        <li><strong>Akselerasi (0-100):</strong> <span>6.8 Detik</span></li>
+                        <li><strong>Harga Mulai:</strong> <span>Rp 395 Juta</span></li>
+                    </ul>
+                    <button class="btn btn-full car-detail-btn">Lihat Detail & Spesifikasi</button>
+                </div>
+            </div>
+
+            <!-- Mobil 3: Elevara Sport GT -->
+            <div class="card car-card catalog-card" data-category="sport">
+                <div class="car-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=600&q=80" alt="Elevara Sport GT">
+                    <span class="car-badge">High Performance</span>
+                </div>
+                <div class="car-card-body">
+                    <h3>Elevara Sport GT (2026)</h3>
+                    <ul>
+                        <li><strong>Kategori:</strong> <span>Sport Coupe 2-Door</span></li>
+                        <li><strong>Jarak Tempuh:</strong> <span>480 km</span></li>
+                        <li><strong>Baterai:</strong> <span>65 kWh Ultrafast</span></li>
+                        <li><strong>Akselerasi (0-100):</strong> <span>4.5 Detik</span></li>
+                        <li><strong>Harga Mulai:</strong> <span>Rp 520 Juta</span></li>
+                    </ul>
+                    <button class="btn btn-full car-detail-btn">Lihat Detail & Spesifikasi</button>
+                </div>
+            </div>
+
+            <!-- Mobil 4: Elevara Apex Prime -->
+            <div class="card car-card catalog-card" data-category="sedan">
+                <div class="car-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=600&q=80" alt="Elevara Apex Prime">
+                    <span class="car-badge">Flagship Luxury</span>
+                </div>
+                <div class="car-card-body">
+                    <h3>Elevara Apex Prime (2026)</h3>
+                    <ul>
+                        <li><strong>Kategori:</strong> <span>Executive Sedan Mewah</span></li>
+                        <li><strong>Jarak Tempuh:</strong> <span>580 km</span></li>
+                        <li><strong>Baterai:</strong> <span>82 kWh High-Density</span></li>
+                        <li><strong>Akselerasi (0-100):</strong> <span>3.8 Detik</span></li>
+                        <li><strong>Harga Mulai:</strong> <span>Rp 680 Juta</span></li>
+                    </ul>
+                    <button class="btn btn-full car-detail-btn">Lihat Detail & Spesifikasi</button>
+                </div>
+            </div>
+
+            <!-- Mobil 5: Elevara Terra SUV -->
+            <div class="card car-card catalog-card" data-category="suv">
+                <div class="car-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=600&q=80" alt="Elevara Terra SUV">
+                    <span class="car-badge">Family AWD 7-Seat</span>
+                </div>
+                <div class="car-card-body">
+                    <h3>Elevara Terra SUV (2026)</h3>
+                    <ul>
+                        <li><strong>Kategori:</strong> <span>Full-Size 7-Seater SUV</span></li>
+                        <li><strong>Jarak Tempuh:</strong> <span>520 km</span></li>
+                        <li><strong>Baterai:</strong> <span>75 kWh Dual-Motor AWD</span></li>
+                        <li><strong>Akselerasi (0-100):</strong> <span>5.4 Detik</span></li>
+                        <li><strong>Harga Mulai:</strong> <span>Rp 590 Juta</span></li>
+                    </ul>
+                    <button class="btn btn-full car-detail-btn">Lihat Detail & Spesifikasi</button>
+                </div>
+            </div>
+
+            <!-- Mobil 6: Elevara Neo Hatch -->
+            <div class="card car-card catalog-card" data-category="city">
+                <div class="car-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=600&q=80" alt="Elevara Neo Hatch">
+                    <span class="car-badge">Super Affordable</span>
+                </div>
+                <div class="car-card-body">
+                    <h3>Elevara Neo Hatch (2026)</h3>
+                    <ul>
+                        <li><strong>Kategori:</strong> <span>Entry Level Hatchback</span></li>
+                        <li><strong>Jarak Tempuh:</strong> <span>280 km</span></li>
+                        <li><strong>Baterai:</strong> <span>35 kWh Compact</span></li>
+                        <li><strong>Akselerasi (0-100):</strong> <span>8.9 Detik</span></li>
+                        <li><strong>Harga Mulai:</strong> <span>Rp 245 Juta</span></li>
+                    </ul>
+                    <button class="btn btn-full car-detail-btn">Lihat Detail & Spesifikasi</button>
+                </div>
+            </div>
+
+            <!-- Mobil 7: Elevara Falcon Wing GT -->
+            <div class="card car-card catalog-card" data-category="sport">
+                <div class="car-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=600&q=80" alt="Elevara Falcon Wing GT">
+                    <span class="car-badge">Gullwing Supercar</span>
+                </div>
+                <div class="car-card-body">
+                    <h3>Elevara Falcon Wing GT (2026)</h3>
+                    <ul>
+                        <li><strong>Kategori:</strong> <span>Supercar Listrik Eksotis</span></li>
+                        <li><strong>Jarak Tempuh:</strong> <span>620 km</span></li>
+                        <li><strong>Baterai:</strong> <span>95 kWh Quad-Motor 650HP</span></li>
+                        <li><strong>Akselerasi (0-100):</strong> <span>2.9 Detik</span></li>
+                        <li><strong>Harga Mulai:</strong> <span>Rp 980 Juta</span></li>
+                    </ul>
+                    <button class="btn btn-full car-detail-btn">Lihat Detail & Spesifikasi</button>
+                </div>
+            </div>
+
+            <!-- Mobil 8: Elevara Horizon MPV -->
+            <div class="card car-card catalog-card" data-category="mpv">
+                <div class="car-img-wrapper">
+                    <img src="horizon_mpv.jpg" alt="Elevara Horizon MPV">
+                    <span class="car-badge">VIP Captain Seat</span>
+                </div>
+                <div class="car-card-body">
+                    <h3>Elevara Horizon MPV (2026)</h3>
+                    <ul>
+                        <li><strong>Kategori:</strong> <span>Luxury Executive MPV</span></li>
+                        <li><strong>Jarak Tempuh:</strong> <span>470 km</span></li>
+                        <li><strong>Baterai:</strong> <span>72 kWh Long Range</span></li>
+                        <li><strong>Akselerasi (0-100):</strong> <span>7.2 Detik</span></li>
+                        <li><strong>Harga Mulai:</strong> <span>Rp 620 Juta</span></li>
+                    </ul>
+                    <button class="btn btn-full car-detail-btn">Lihat Detail & Spesifikasi</button>
+                </div>
+            </div>
+
+            <!-- Mobil 9: Elevara Cyber Truck -->
+            <div class="card car-card catalog-card" data-category="mpv">
+                <div class="car-img-wrapper">
+                    <img src="cyber_truck.jpg" alt="Elevara Cyber Truck">
+                    <span class="car-badge">Heavy Duty Pickup</span>
+                </div>
+                <div class="car-card-body">
+                    <h3>Elevara Cyber Truck (2026)</h3>
+                    <ul>
+                        <li><strong>Kategori:</strong> <span>Pickup Offroad & Kerja</span></li>
+                        <li><strong>Jarak Tempuh:</strong> <span>600 km</span></li>
+                        <li><strong>Baterai:</strong> <span>100 kWh Heavy Duty</span></li>
+                        <li><strong>Daya Tarik:</strong> <span>4.500 kg (Towing)</span></li>
+                        <li><strong>Harga Mulai:</strong> <span>Rp 780 Juta</span></li>
+                    </ul>
+                    <button class="btn btn-full car-detail-btn">Lihat Detail & Spesifikasi</button>
+                </div>
+            </div>
+
+            <!-- Mobil 10: Elevara Hyperion One -->
+            <div class="card car-card catalog-card" data-category="sport">
+                <div class="car-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=600&q=80" alt="Elevara Hyperion One">
+                    <span class="car-badge">Limited Hypercar (900HP)</span>
+                </div>
+                <div class="car-card-body">
+                    <h3>Elevara Hyperion One (2026)</h3>
+                    <ul>
+                        <li><strong>Kategori:</strong> <span>Hypercar Solid-State EV</span></li>
+                        <li><strong>Jarak Tempuh:</strong> <span>700 km</span></li>
+                        <li><strong>Baterai:</strong> <span>110 kWh Solid-State</span></li>
+                        <li><strong>Akselerasi (0-100):</strong> <span>2.1 Detik</span></li>
+                        <li><strong>Harga Mulai:</strong> <span>Rp 1,45 Miliar</span></li>
+                    </ul>
+                    <button class="btn btn-full car-detail-btn">Lihat Detail & Spesifikasi</button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Empty Search Notice -->
+        <div id="emptySearchNotice" class="empty-notice">
+            <h3>Mobil Tidak Ditemukan</h3>
+            <p>Maaf, tidak ada model mobil listrik yang cocok dengan pencarian Anda. Silakan coba kata kunci lain.</p>
+        </div>
+
+        <!-- Tombol Kembali ke Beranda -->
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="index.html" class="btn btn-secondary" style="padding: 12px 30px;">
+                &larr; Kembali ke Beranda
+            </a>
+            <a href="index.html#kontak" class="btn" style="padding: 12px 30px; margin-left: 15px;">
+                ⚡ Booking Test Drive Sekarang
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <a href="index.html" class="logo">
+            <img src="logo.png" alt="Logo Elevara">
+            <span class="logo-text">ELEVA<span>RA</span></span>
+        </a>
+        <div class="footer-links">
+            <a href="index.html#home">Home</a> • 
+            <a href="index.html#tentang">Tentang</a> • 
+            <a href="index.html#mobil">Mobil</a> • 
+            <a href="index.html#teknologi">Teknologi</a> • 
+            <a href="index.html#galeri">Galeri</a> • 
+            <a href="index.html#faq">FAQ</a> • 
+            <a href="index.html#kontak">Kontak</a>
+        </div>
+        <p>Follow us: @elevara.ev (Instagram / Facebook / YouTube)</p>
+        <div class="copyright">
+            Copyright © 2026 Elevara Motor Corp. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Modal Detail Mobil (Interaktif dengan JS) -->
+    <div class="modal-backdrop" id="carModal">
+        <div class="modal-content">
+            <button class="modal-close-btn" id="modalClose" aria-label="Tutup Detail">&times;</button>
+            <div id="modalBody">
+                <!-- Diisi otomatis secara dinamis oleh script.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <!-- Tombol Floating Scroll To Top -->
+    <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Kembali ke atas">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
+    <!-- Menghubungkan File JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>

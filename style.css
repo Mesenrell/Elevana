@@ -1,98 +1,228 @@
 :root {
     --primary: #0d6efd;
     --accent: #00e676;
-    --dark: #121212;
-    --light: #f8f9fa;
-    --grey: #6c757d;
+    --accent-hover: #00c853;
+    --cyan-glow: #00f2fe;
+    --dark: #0b1120;
+    --dark-surface: #131d33;
+    --dark-card: #18243e;
+    --light: #f8fafc;
+    --grey: #64748b;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+    --border-dark: rgba(255, 255, 255, 0.1);
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+    --shadow-md: 0 8px 20px rgba(0,0,0,0.08);
+    --shadow-lg: 0 16px 32px rgba(0,0,0,0.14);
+    --glow-effect: 0 0 18px rgba(0, 230, 118, 0.4);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
 }
 
 body {
     background-color: var(--light);
-    color: #333;
+    color: var(--text-main);
     line-height: 1.6;
 }
 
-/* Navigation */
-nav {
-    background: var(--dark);
-    color: white;
-    padding: 1rem 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* =========================================================
+   1. Header & Navigation (Futuristik & Responsif)
+   ========================================================= */
+header {
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
-nav .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--accent);
+nav {
+    background: rgba(11, 17, 32, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: white;
+    padding: 0.8rem 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transition);
+    border-bottom: 1px solid rgba(0, 230, 118, 0.15);
 }
 
-nav ul {
+nav.scrolled {
+    padding: 0.6rem 6%;
+    background: rgba(11, 17, 32, 0.98);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    border-bottom-color: rgba(0, 230, 118, 0.3);
+}
+
+/* Bagian Logo Futuristik (Gambar Logo Badge + Teks Logo) */
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.logo:hover {
+    transform: translateY(-2px);
+}
+
+.logo img {
+    height: 44px;
+    width: 44px;
+    object-fit: contain;
+    border-radius: 8px;
+    display: block;
+    filter: drop-shadow(0 0 8px rgba(0, 242, 254, 0.5));
+    transition: var(--transition);
+}
+
+.logo:hover img {
+    filter: drop-shadow(0 0 14px rgba(0, 230, 118, 0.8));
+}
+
+.logo-text {
+    font-size: 1.55rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.logo-text span {
+    color: var(--accent);
+    text-shadow: 0 0 10px rgba(0, 230, 118, 0.5);
+}
+
+/* Menu Navigasi */
+.nav-links {
     display: flex;
     list-style: none;
-    gap: 15px;
+    align-items: center;
+    gap: 20px;
 }
 
-nav a {
-    color: white;
+.nav-links li a {
+    color: #cbd5e1;
     text-decoration: none;
-    font-size: 0.9rem;
-    transition: 0.3s;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: var(--transition);
+    position: relative;
 }
 
-nav a:hover {
+.nav-links li a:hover,
+.nav-links li a.active {
     color: var(--accent);
 }
 
-/* General Section */
+.nav-links li a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 12px;
+    right: 12px;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 2px;
+    box-shadow: 0 0 8px var(--accent);
+}
+
+/* Nav CTA Button */
+.nav-cta {
+    background: linear-gradient(135deg, #00e676, #00f2fe) !important;
+    color: #0b1120 !important;
+    padding: 8px 20px !important;
+    border-radius: 24px !important;
+    font-weight: 700 !important;
+    box-shadow: 0 2px 10px rgba(0, 230, 118, 0.3) !important;
+}
+
+.nav-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 18px rgba(0, 230, 118, 0.6) !important;
+}
+
+.nav-cta.active::after {
+    display: none !important;
+}
+
+/* Tombol Hamburger Mobile Menu */
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 1001;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #ffffff;
+    border-radius: 3px;
+    transition: var(--transition);
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px);
+}
+
+/* =========================================================
+   2. General Layout & Utility
+   ========================================================= */
 section {
-    padding: 60px 5%;
+    padding: 70px 6%;
 }
 
 .bg-alt {
-    background-color: #eee;
+    background-color: #f1f5f9;
 }
 
 .section-title {
     text-align: center;
-    font-size: 2rem;
-    margin-bottom: 30px;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+    color: var(--dark);
+    position: relative;
 }
 
-/* 1. Hero Section */
-.hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                url('https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1200&q=80') center/cover;
-    height: 80vh;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0 20px;
-}
-
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 15px;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    max-width: 600px;
-    margin-bottom: 25px;
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent), var(--cyan-glow));
+    margin: 10px auto 0;
+    border-radius: 2px;
 }
 
 /* Buttons */
@@ -101,40 +231,67 @@ section {
     color: var(--dark);
     padding: 12px 28px;
     text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
+    font-weight: 700;
+    border-radius: 8px;
     border: none;
     cursor: pointer;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: var(--transition);
+    text-align: center;
 }
 
 .btn:hover {
-    background: #00c853;
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 230, 118, 0.35);
+}
+
+.btn-secondary {
+    background: var(--dark);
+    color: white;
+    border: 1px solid rgba(0, 230, 118, 0.3);
+}
+
+.btn-secondary:hover {
+    background: var(--dark-surface);
+    color: var(--accent);
+    border-color: var(--accent);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
 }
 
 .btn-full {
     width: 100%;
 }
 
-/* Grid Layouts */
+/* Grids */
 .grid-3 {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 25px;
 }
 
 .grid-4 {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
     gap: 20px;
 }
 
 /* Cards */
 .card {
     background: white;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 26px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
 }
 
 .card-center {
@@ -143,99 +300,1401 @@ section {
 
 .card-center h2 {
     font-size: 2.5rem;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .mb-10 {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
-/* 3. Mobil Cards */
+/* =========================================================
+   3. Hero Section (Halaman Beranda)
+   ========================================================= */
+.hero {
+    background: linear-gradient(135deg, rgba(11, 17, 32, 0.88), rgba(11, 17, 32, 0.78)), 
+                url('https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+    min-height: 85vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.hero h1 {
+    font-size: 3.2rem;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 18px;
+    max-width: 850px;
+    letter-spacing: -0.5px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 650px;
+    margin-bottom: 30px;
+    color: #cbd5e1;
+}
+
+/* =========================================================
+   4. Mobil Section & Cards (Beranda & Katalog)
+   ========================================================= */
+.car-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+}
+
+.car-img-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+    background: #0f172a;
+}
+
 .car-card img {
     width: 100%;
-    height: 180px;
+    height: 100%;
     object-fit: cover;
-    border-radius: 5px;
+    transition: transform 0.5s ease;
+}
+
+.car-card:hover img {
+    transform: scale(1.06);
+}
+
+.car-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(11, 17, 32, 0.85);
+    color: var(--accent);
+    border: 1px solid rgba(0, 230, 118, 0.4);
+    backdrop-filter: blur(6px);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.car-card-body {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .car-card h3 {
-    margin: 10px 0;
+    margin-bottom: 8px;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--dark);
 }
 
 .car-card ul {
     list-style: none;
-    margin: 10px 0;
-    font-size: 0.9rem;
+    margin: 12px 0 20px;
+    font-size: 0.92rem;
+    color: var(--text-muted);
 }
 
-/* 7. Gallery */
+.car-card ul li {
+    padding: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.car-card .btn {
+    margin-top: auto;
+}
+
+/* Tombol Lihat Semua Mobil Listrik */
+.view-all-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.btn-all-cars {
+    background: linear-gradient(135deg, #0b1120 0%, #18243e 100%);
+    color: #ffffff;
+    border: 2px solid var(--accent);
+    padding: 16px 36px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    border-radius: 30px;
+    box-shadow: 0 8px 24px rgba(0, 230, 118, 0.2);
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.btn-all-cars:hover {
+    background: var(--accent);
+    color: #0b1120;
+    border-color: var(--accent);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(0, 230, 118, 0.45);
+}
+
+/* =========================================================
+   5. Halaman Katalog Lengkap (mobil.html)
+   ========================================================= */
+.catalog-hero {
+    background: linear-gradient(135deg, #0b1120 0%, #131d33 100%);
+    color: white;
+    padding: 60px 6% 40px;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 230, 118, 0.2);
+}
+
+.catalog-hero h1 {
+    font-size: 2.6rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.catalog-hero h1 span {
+    color: var(--accent);
+}
+
+.catalog-hero p {
+    color: #94a3b8;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+/* Search & Filter Bar */
+.filter-search-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.search-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.search-wrapper input {
+    width: 100%;
+    padding: 14px 20px 14px 45px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 30px;
+    color: white;
+    font-size: 1rem;
+    transition: var(--transition);
+    outline: none;
+}
+
+.search-wrapper input:focus {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--accent);
+    box-shadow: 0 0 15px rgba(0, 230, 118, 0.3);
+}
+
+.search-wrapper input::placeholder {
+    color: #94a3b8;
+}
+
+.search-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--accent);
+    pointer-events: none;
+}
+
+.filter-bar {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-btn {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #cbd5e1;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--accent);
+    color: var(--dark);
+    border-color: var(--accent);
+    box-shadow: 0 2px 10px rgba(0, 230, 118, 0.3);
+}
+
+/* Empty State */
+.empty-notice {
+    text-align: center;
+    padding: 60px 20px;
+    display: none;
+    color: var(--text-muted);
+}
+
+.empty-notice h3 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    color: var(--dark);
+}
+
+/* =========================================================
+   6. Gallery Grid
+   ========================================================= */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 15px;
 }
 
 .gallery-grid img {
     width: 100%;
-    height: 150px;
+    height: 180px;
     object-fit: cover;
-    border-radius: 5px;
+    border-radius: 8px;
+    transition: var(--transition);
 }
 
-/* 9. FAQ Container */
+.gallery-grid img:hover {
+    transform: scale(1.03);
+    box-shadow: var(--shadow-md);
+}
+
+/* =========================================================
+   7. Interactive FAQ Accordion
+   ========================================================= */
 .faq-container {
     max-width: 800px;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
 }
 
-/* 10. Contact */
+.faq-item {
+    background: white;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.faq-question {
+    padding: 18px 22px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    background: white;
+    transition: background-color 0.2s;
+}
+
+.faq-question:hover {
+    background-color: #f8fafc;
+}
+
+.faq-toggle-icon {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--accent-hover);
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+    padding: 0 22px;
+    color: var(--text-muted);
+}
+
+.faq-item.active .faq-answer {
+    max-height: 200px;
+    padding: 0 22px 18px;
+}
+
+.faq-item.active .faq-toggle-icon {
+    transform: rotate(45deg);
+}
+
+/* =========================================================
+   8. Contact Section
+   ========================================================= */
 .contact-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 35px;
 }
 
 form input, form textarea {
     width: 100%;
-    padding: 10px;
+    padding: 12px 15px;
     margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+form input:focus, form textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(0, 230, 118, 0.2);
+}
+
+.contact-info-card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+}
+
+.contact-info-card h3 {
+    margin-bottom: 12px;
+    color: var(--dark);
+}
+
+.contact-info-card p {
+    margin-bottom: 8px;
+    color: var(--text-muted);
 }
 
 .map-placeholder {
-    background: #ccc;
+    background: #e2e8f0;
     width: 100%;
-    height: 150px;
-    border-radius: 5px;
-    margin-top: 15px;
+    height: 160px;
+    border-radius: 8px;
+    margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: var(--grey);
+    font-weight: 500;
 }
 
-/* 11. Footer */
+/* =========================================================
+   9. Modal Detail Mobil
+   ========================================================= */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(11, 17, 32, 0.75);
+    backdrop-filter: blur(6px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-backdrop.show {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    background: white;
+    width: 100%;
+    max-width: 780px;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: modalSlide 0.3s ease;
+}
+
+@keyframes modalSlide {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 18px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    font-size: 1.3rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: var(--transition);
+}
+
+.modal-close-btn:hover {
+    background: rgba(0, 0, 0, 0.9);
+    transform: scale(1.1);
+}
+
+.modal-car-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.modal-img-container {
+    position: relative;
+    background: #0f172a;
+}
+
+.modal-img-container img {
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+    object-fit: cover;
+}
+
+.modal-price-tag {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    background: linear-gradient(135deg, #00e676, #00f2fe);
+    color: #0b1120;
+    font-weight: 800;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 1.15rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.modal-car-info {
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-badge {
+    background: #f1f5f9;
+    color: #0b1120;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 8px;
+    align-self: flex-start;
+}
+
+.modal-car-info h3 {
+    font-size: 1.6rem;
+    color: var(--dark);
+    margin-bottom: 4px;
+}
+
+.modal-car-subtitle {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+}
+
+.modal-desc {
+    font-size: 0.92rem;
+    color: var(--text-main);
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+.specs-title {
+    font-size: 1rem;
+    color: var(--dark);
+    margin-bottom: 8px;
+    border-bottom: 2px solid var(--accent);
+    display: inline-block;
+    padding-bottom: 2px;
+}
+
+.modal-specs-list {
+    list-style: none;
+    margin-bottom: 20px;
+    font-size: 0.88rem;
+}
+
+.modal-specs-list li {
+    padding: 4px 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.modal-specs-list strong {
+    color: var(--dark);
+}
+
+.modal-cta-btn {
+    text-align: center;
+    padding: 12px 15px;
+}
+
+/* =========================================================
+   10. Toast Notification
+   ========================================================= */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--dark);
+    color: #fff;
+    border-left: 4px solid var(--accent);
+    padding: 14px 22px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-lg);
+    z-index: 3000;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: var(--transition);
+    pointer-events: none;
+    font-size: 0.95rem;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* =========================================================
+   11. Footer
+   ========================================================= */
 footer {
     background: var(--dark);
     color: white;
-    padding: 40px 5% 20px;
+    padding: 50px 6% 25px;
     text-align: center;
+    border-top: 1px solid rgba(0, 230, 118, 0.15);
+}
+
+footer .logo {
+    justify-content: center;
+    margin-bottom: 15px;
 }
 
 .footer-links {
-    margin: 15px 0;
+    margin: 18px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 footer a {
     color: var(--grey);
     text-decoration: none;
-    margin: 0 10px;
+    transition: var(--transition);
+}
+
+footer a:hover {
+    color: var(--accent);
 }
 
 .copyright {
-    margin-top: 20px;
-    border-top: 1px solid #333;
+    margin-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
     padding-top: 20px;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     color: var(--grey);
+}
+
+/* =========================================================
+   12. Responsiveness (Mobile & Tablet)
+   ========================================================= */
+@media (max-width: 868px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 65px;
+        right: -100%;
+        width: 260px;
+        height: calc(100vh - 65px);
+        background: var(--dark-surface);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px 25px;
+        gap: 18px;
+        box-shadow: var(--shadow-lg);
+        transition: right 0.3s ease;
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links li a {
+        display: block;
+        width: 100%;
+        padding: 8px 12px;
+    }
+
+    .nav-cta {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .modal-car-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-img-container img {
+        height: 200px;
+        min-height: auto;
+    }
+
+    .filter-bar {
+        gap: 6px;
+    }
+
+    .filter-btn {
+        padding: 6px 14px;
+        font-size: 0.82rem;
+    }
+}
+
+/* =========================================================
+   13. Desain Baru Bagian Keunggulan: Hal Baik & Buruk Tentang EV
+   ========================================================= */
+.ev-comparison-section {
+    background-color: #ffffff;
+    padding: 80px 6%;
+}
+
+.ev-section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.ev-section-header .section-title {
+    margin-bottom: 20px;
+}
+
+.ev-section-header .section-title::after {
+    display: none; /* Bersih tanpa garis bawah default agar proporsional dengan tabs */
+}
+
+.ev-tabs-container {
+    display: inline-flex;
+    background: #f1f5f9;
+    padding: 5px;
+    border-radius: 12px;
+    gap: 6px;
+    border: 1px solid #e2e8f0;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.03);
+}
+
+.ev-tab-btn {
+    border: none;
+    background: transparent;
+    padding: 10px 24px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #64748b;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.ev-tab-btn:hover {
+    color: var(--dark);
+}
+
+.ev-tab-btn.active {
+    background: #e0f2fe;
+    color: #0284c7;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(2, 132, 199, 0.15);
+}
+
+/* 2-Kolom Wrapper */
+.ev-comparison-wrapper {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 40px;
+    align-items: center;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+/* Kolom Kiri: Ilustrasi Karakter & Thought Bubbles */
+.ev-illustration-card {
+    border-radius: 36px;
+    overflow: hidden;
+    box-shadow: 0 16px 36px rgba(0, 230, 118, 0.22);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(145deg, #00e676, #00c853);
+    min-height: 490px;
+    transition: var(--transition);
+}
+
+.ev-illustration-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 42px rgba(0, 230, 118, 0.32);
+}
+
+.ev-hero-svg {
+    width: 100%;
+    height: 100%;
+    max-height: 500px;
+    display: block;
+}
+
+/* Animasi Mengambang untuk Thought Bubbles */
+@keyframes bubbleFloatLeft {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-8px) rotate(-1.5deg);
+    }
+}
+
+@keyframes bubbleFloatRight {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-8px) rotate(1.5deg);
+    }
+}
+
+.thought-bubble-left {
+    animation: bubbleFloatLeft 4s ease-in-out infinite;
+    transform-origin: 122px 135px;
+}
+
+.thought-bubble-right {
+    animation: bubbleFloatRight 4.5s ease-in-out infinite 0.6s;
+    transform-origin: 258px 135px;
+}
+
+/* Kolom Kanan: Daftar Kartu Poin */
+.ev-cards-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ev-tab-pane {
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.ev-tab-pane.active {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Kartu Poin Fitur */
+.ev-feature-card {
+    background: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 18px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+    transition: var(--transition);
+}
+
+.ev-feature-card:hover {
+    border-color: #cbd5e1;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    transform: translateX(6px);
+}
+
+/* Ikon Box */
+.ev-card-icon-box {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.ev-feature-card:hover .ev-card-icon-box {
+    transform: scale(1.08);
+}
+
+.green-icon {
+    background: #e8fbf0;
+    color: #00c853;
+    border: 1px solid rgba(0, 200, 83, 0.25);
+}
+
+.red-icon {
+    background: #fef2f2;
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.25);
+}
+
+.icon-subtext {
+    font-size: 0.65rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-top: -2px;
+}
+
+/* Konten Teks Kartu */
+.ev-card-content h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 5px;
+    line-height: 1.35;
+}
+
+.ev-card-content p {
+    font-size: 0.88rem;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+/* =========================================================
+   14. Floating Scroll To Top Button
+   ========================================================= */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #0284c7;
+    background: linear-gradient(135deg, #0284c7, #0ea5e9);
+    color: #ffffff;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(2, 132, 199, 0.45);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.8);
+    transition: var(--transition);
+    z-index: 999;
+}
+
+.scroll-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.scroll-top-btn:hover {
+    background: linear-gradient(135deg, #0369a1, #0284c7);
+    transform: translateY(-4px) scale(1.08);
+    box-shadow: 0 8px 24px rgba(2, 132, 199, 0.65);
+}
+
+/* Responsivitas Bagian Keunggulan */
+@media (max-width: 992px) {
+    .ev-comparison-wrapper {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .ev-illustration-card {
+        max-width: 380px;
+        margin: 0 auto;
+        min-height: 420px;
+    }
+}
+
+@media (max-width: 600px) {
+    .ev-comparison-section {
+        padding: 60px 5%;
+    }
+
+    .ev-feature-card {
+        padding: 16px 16px;
+        gap: 14px;
+    }
+
+    .ev-card-icon-box {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+    }
+
+    .ev-card-content h3 {
+        font-size: 0.96rem;
+    }
+
+    .ev-card-content p {
+        font-size: 0.84rem;
+    }
+
+    .scroll-top-btn {
+        bottom: 20px;
+        right: 20px;
+        width: 42px;
+        height: 42px;
+    }
+}
+
+/* =========================================================
+   15. Desain Baru Bagian Berita Mobil (Carousel & Modern Cards)
+   ========================================================= */
+.news-section {
+    padding: 80px 6%;
+    background-color: #ffffff;
+}
+
+.news-header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.news-main-title {
+    font-size: 2.3rem;
+    font-weight: 800;
+    color: #0b1120;
+    letter-spacing: -0.5px;
+    margin: 0;
+}
+
+.news-slider-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.news-nav-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.news-nav-btn:hover {
+    border-color: #00e676;
+    color: #0b1120;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+.news-nav-btn:active {
+    transform: scale(0.95);
+}
+
+/* Carousel Container & Track */
+.news-carousel-container {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    padding: 10px 4px 25px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.news-carousel-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Kartu Berita */
+.news-card {
+    flex: 0 0 calc((100% - (3 * 24px)) / 4);
+    min-width: 260px;
+    background: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition);
+    scroll-snap-align: start;
+}
+
+.news-card:hover {
+    transform: translateY(-6px);
+    border-color: #cbd5e1;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.09);
+}
+
+.news-img-box {
+    height: 180px;
+    width: 100%;
+    overflow: hidden;
+    background: #f1f5f9;
+    position: relative;
+}
+
+.news-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease;
+}
+
+.news-card:hover .news-img-box img {
+    transform: scale(1.08);
+}
+
+.news-card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.news-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.38;
+    margin-bottom: 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 44px;
+}
+
+.news-excerpt {
+    font-size: 0.88rem;
+    color: #64748b;
+    line-height: 1.5;
+    margin-bottom: 16px;
+    flex-grow: 1;
+}
+
+.read-more-link {
+    color: #334155;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color 0.2s;
+    display: inline;
+}
+
+.read-more-link:hover {
+    color: #0284c7;
+}
+
+.news-meta {
+    border-top: 1px solid #f1f5f9;
+    padding-top: 12px;
+    font-size: 0.78rem;
+    color: #94a3b8;
+}
+
+.news-author {
+    color: #0284c7;
+    font-weight: 600;
+}
+
+.news-date {
+    color: #94a3b8;
+    font-weight: 500;
+}
+
+/* Modal Berita */
+.news-modal-content {
+    max-width: 680px;
+}
+
+.news-modal-img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.news-modal-inner {
+    padding: 28px;
+}
+
+.news-modal-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #0b1120;
+    margin-bottom: 8px;
+    line-height: 1.35;
+}
+
+.news-modal-meta {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.news-modal-text {
+    font-size: 0.95rem;
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 14px;
+}
+
+/* Responsivitas Berita */
+@media (max-width: 1100px) {
+    .news-card {
+        flex: 0 0 calc((100% - (2 * 20px)) / 3);
+        min-width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .news-main-title {
+        font-size: 1.8rem;
+    }
+
+    .news-card {
+        flex: 0 0 calc((100% - 16px) / 2);
+        min-width: 230px;
+    }
+
+    .news-img-box {
+        height: 160px;
+    }
+
+    .news-card-body {
+        padding: 16px;
+    }
+}
+
+@media (max-width: 520px) {
+    .news-card {
+        flex: 0 0 85%;
+        min-width: 220px;
+    }
+}
+
+/* =========================================================
+   16. Desain Baru Bagian Cara Merawat Baterai EV Anda
+   ========================================================= */
+.battery-care-section {
+    padding: 85px 6%;
+    background-color: #ffffff;
+}
+
+.battery-care-wrapper {
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    gap: 55px;
+    align-items: center;
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+/* Kolom Kiri: Visual Card */
+.battery-care-card {
+    background: linear-gradient(145deg, #00e676, #00c853);
+    border-radius: 36px;
+    overflow: hidden;
+    box-shadow: 0 16px 36px rgba(0, 230, 118, 0.22);
+    position: relative;
+    transition: var(--transition);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.battery-care-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 44px rgba(0, 230, 118, 0.32);
+}
+
+.battery-care-badge-icon {
+    position: absolute;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.22);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.battery-care-img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.battery-care-card:hover .battery-care-img {
+    transform: scale(1.03);
+}
+
+/* Kolom Kanan: Teks & Tips */
+.battery-care-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.battery-care-title {
+    font-size: 2.35rem;
+    font-weight: 800;
+    color: #0b1120;
+    margin-bottom: 26px;
+    letter-spacing: -0.5px;
+    line-height: 1.25;
+}
+
+.battery-tips-list {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.battery-tip-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.battery-tip-item h3 {
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.35;
+}
+
+.battery-tip-item p {
+    font-size: 0.88rem;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+/* Responsivitas Bagian Perawatan Baterai */
+@media (max-width: 992px) {
+    .battery-care-wrapper {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .battery-care-card {
+        max-width: 420px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .battery-care-img {
+        height: 440px;
+    }
+}
+
+@media (max-width: 600px) {
+    .battery-care-section {
+        padding: 60px 5%;
+    }
+
+    .battery-care-title {
+        font-size: 1.85rem;
+        margin-bottom: 20px;
+    }
+
+    .battery-tip-item h3 {
+        font-size: 1rem;
+    }
+
+    .battery-tip-item p {
+        font-size: 0.84rem;
+    }
+
+    .battery-care-img {
+        height: 360px;
+    }
 }
