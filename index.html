@@ -1,258 +1,1287 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elevara - Masa Depan Berkendara</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elevara - Masa Depan Berkendara Listrik</title>
     <!-- Menghubungkan ke file CSS eksternal -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-    <!-- Header / Navbar -->
-    <nav>
-        <div class="logo">ELEVARA</div>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#tentang">Tentang</a></li>
-            <li><a href="#mobil">Mobil</a></li>
-            <li><a href="#keunggulan">Keunggulan</a></li>
-            <li><a href="#teknologi">Teknologi</a></li>
-            <li><a href="#charging">Charging</a></li>
-            <li><a href="#galeri">Galeri</a></li>
-            <li><a href="#berita">Berita</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#kontak">Kontak</a></li>
+  <body>
+    <!-- Header / Navbar Ringkas & Futuristik -->
+    <header>
+      <nav>
+        <!-- Bagian Logo Futuristik Elevara -->
+        <a href="index.html" class="logo" title="Elevara Home">
+          <img src="logo.png" alt="Logo Elevara" id="brandLogo" />
+          <span class="logo-text">ELEVA<span>RA</span></span>
+        </a>
+
+        <!-- Tombol Hamburger untuk Tampilan Mobile -->
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Buka Menu Navigasi"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <!-- Daftar Menu yang Disederhanakan / Dikurangi agar tidak terlalu ramai -->
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#tentang">Tentang</a></li>
+          <li><a href="#mobil">Mobil</a></li>
+          <li><a href="#teknologi">Teknologi</a></li>
+          <li><a href="#galeri">Galeri</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#kontak" class="nav-cta">Hubungi Kami</a></li>
         </ul>
-    </nav>
+      </nav>
+    </header>
 
     <!-- 1. Home / Beranda -->
     <section id="home" class="hero">
-        <h1>Masa Depan Berkendara Ada di Sini</h1>
-        <p>Nikmati efisiensi berkendara tanpa emisi dengan performa tinggi dan teknologi terkini dari Elevara.</p>
-        <a href="#mobil" class="btn">Lihat Mobil</a>
+      <h1>Masa Depan Berkendara Ada di Sini</h1>
+      <p>
+        Nikmati efisiensi berkendara tanpa emisi dengan performa tinggi dan
+        teknologi otonom terkini dari Elevara.
+      </p>
+      <div
+        style="
+          display: flex;
+          gap: 15px;
+          flex-wrap: wrap;
+          justify-content: center;
+        "
+      >
+        <a href="mobil.html" class="btn">Lihat Koleksi Mobil</a>
+        <a href="#tentang" class="btn btn-secondary">Pelajari Teknologi</a>
+      </div>
     </section>
 
     <!-- 2. Tentang Mobil Listrik -->
     <section id="tentang">
-        <h2 class="section-title">Tentang Mobil Listrik</h2>
-        <div class="grid-3">
-            <div class="card">
-                <h3>Pengertian</h3>
-                <p>Mobil listrik adalah kendaraan yang sepenuhnya atau sebagian digerakkan oleh satu atau lebih motor listrik menggunakan energi yang disimpan dalam baterai isi ulang.</p>
-            </div>
-            <div class="card">
-                <h3>Cara Kerja</h3>
-                <p>Baterai menyalurkan arus listrik ke inverter, yang kemudian mengatur daya menuju motor listrik untuk memutar roda kendaraan.</p>
-            </div>
-            <div class="card">
-                <h3>Perbedaan dengan Bensin</h3>
-                <p>Menggunakan listrik alih-alih BBM, tidak menghasilkan emisi pipa pembuangan, suara mesin halus, serta respon torsi instan sejak titik awal.</p>
-            </div>
+      <h2 class="section-title">Tentang Mobil Listrik</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Pengertian</h3>
+          <p>
+            Mobil listrik adalah kendaraan yang sepenuhnya atau sebagian
+            digerakkan oleh motor listrik bertenaga baterai isi ulang tanpa gas
+            buang.
+          </p>
         </div>
+        <div class="card">
+          <h3>Cara Kerja</h3>
+          <p>
+            Baterai menyalurkan arus listrik ke inverter cerdas, yang mengatur
+            daya ke motor listrik untuk menggerakkan roda secara instan.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Perbedaan dengan BBM</h3>
+          <p>
+            Nol emisi pipa knalpot, biaya pengisian daya jauh lebih terjangkau,
+            akselerasi responsif, dan kabin yang jauh lebih hening.
+          </p>
+        </div>
+      </div>
     </section>
 
-    <!-- 3. Daftar Mobil -->
+    <!-- 3. Daftar Mobil Unggulan -->
     <section id="mobil" class="bg-alt">
-        <h2 class="section-title">Daftar Mobil Elevara</h2>
-        <div class="grid-3">
-            <div class="card car-card">
-                <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=500&q=80" alt="EV City">
-                <h3>EV City (2026)</h3>
-                <ul>
-                    <li><strong>Jarak Tempuh:</strong> 300 km</li>
-                    <li><strong>Kapasitas Baterai:</strong> 40 kWh</li>
-                    <li><strong>Harga:</strong> Rp 300 Juta</li>
-                </ul>
-                <button class="btn btn-full">Detail</button>
-            </div>
-            <div class="card car-card">
-                <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=500&q=80" alt="EV Sport">
-                <h3>EV Sport (2026)</h3>
-                <ul>
-                    <li><strong>Jarak Tempuh:</strong> 450 km</li>
-                    <li><strong>Kapasitas Baterai:</strong> 60 kWh</li>
-                    <li><strong>Harga:</strong> Rp 450 Juta</li>
-                </ul>
-                <button class="btn btn-full">Detail</button>
-            </div>
-            <div class="card car-card">
-                <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=500&q=80" alt="EV Premium">
-                <h3>EV Premium (2026)</h3>
-                <ul>
-                    <li><strong>Jarak Tempuh:</strong> 550 km</li>
-                    <li><strong>Kapasitas Baterai:</strong> 80 kWh</li>
-                    <li><strong>Harga:</strong> Rp 650 Juta</li>
-                </ul>
-                <button class="btn btn-full">Detail</button>
-            </div>
+      <h2 class="section-title">Daftar Mobil Elevara</h2>
+      <div class="grid-3">
+        <!-- Mobil 1 -->
+        <div class="card car-card">
+          <div class="car-img-wrapper">
+            <img
+              src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=600&q=80"
+              alt="EV City"
+            />
+            <span class="car-badge">City Eco</span>
+          </div>
+          <div class="car-card-body">
+            <h3>EV City (2026)</h3>
+            <ul>
+              <li><strong>Jarak Tempuh:</strong> <span>300 km</span></li>
+              <li><strong>Kapasitas Baterai:</strong> <span>40 kWh</span></li>
+              <li><strong>Harga Mulai:</strong> <span>Rp 300 Juta</span></li>
+            </ul>
+            <button class="btn btn-full car-detail-btn">Lihat Detail</button>
+          </div>
         </div>
+
+        <!-- Mobil 2 -->
+        <div class="card car-card">
+          <div class="car-img-wrapper">
+            <img
+              src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=600&q=80"
+              alt="EV Sport"
+            />
+            <span class="car-badge">Sport Coupe</span>
+          </div>
+          <div class="car-card-body">
+            <h3>EV Sport (2026)</h3>
+            <ul>
+              <li><strong>Jarak Tempuh:</strong> <span>450 km</span></li>
+              <li><strong>Kapasitas Baterai:</strong> <span>60 kWh</span></li>
+              <li><strong>Harga Mulai:</strong> <span>Rp 450 Juta</span></li>
+            </ul>
+            <button class="btn btn-full car-detail-btn">Lihat Detail</button>
+          </div>
+        </div>
+
+        <!-- Mobil 3 -->
+        <div class="card car-card">
+          <div class="car-img-wrapper">
+            <img
+              src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=600&q=80"
+              alt="EV Premium"
+            />
+            <span class="car-badge">Luxury Flagship</span>
+          </div>
+          <div class="car-card-body">
+            <h3>EV Premium (2026)</h3>
+            <ul>
+              <li><strong>Jarak Tempuh:</strong> <span>550 km</span></li>
+              <li><strong>Kapasitas Baterai:</strong> <span>80 kWh</span></li>
+              <li><strong>Harga Mulai:</strong> <span>Rp 650 Juta</span></li>
+            </ul>
+            <button class="btn btn-full car-detail-btn">Lihat Detail</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tombol untuk melihat 10 daftar mobil lengkap di halaman berbeda -->
+      <div class="view-all-container">
+        <a href="mobil.html" class="btn-all-cars">
+          <span>Lihat Semua Mobil Listrik</span>
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
     </section>
 
-    <!-- 4. Keunggulan -->
-    <section id="keunggulan">
-        <h2 class="section-title">Keunggulan Elevara</h2>
-        <div class="grid-4">
-            <div class="card card-center">
-                <h2>⚡</h2>
-                <h3>Hemat Energi</h3>
-                <p>Biaya operasional harian jauh lebih murah dibanding BBM.</p>
-            </div>
-            <div class="card card-center">
-                <h2>🌱</h2>
-                <h3>Ramah Lingkungan</h3>
-                <p>Nol emisi karbon saat berkendara untuk bumi yang sehat.</p>
-            </div>
-            <div class="card card-center">
-                <h2>🔇</h2>
-                <h3>Lebih Senyap</h3>
-                <p>Kabin tenang tanpa getaran dan kebisingan mesin pembakaran.</p>
-            </div>
-            <div class="card card-center">
-                <h2>🔧</h2>
-                <h3>Perawatan Sederhana</h3>
-                <p>Komponen bergerak lebih sedikit, menghemat biaya servis rutin.</p>
-            </div>
+    <!-- 4. Keunggulan: Hal Baik Dan Buruk Tentang EV -->
+    <section id="keunggulan" class="ev-comparison-section">
+      <div class="ev-section-header">
+        <h2 class="section-title">Hal Baik Dan Buruk Tentang EV</h2>
+        <div class="ev-tabs-container">
+          <button class="ev-tab-btn active" data-tab="keuntungan">
+            Keuntungan
+          </button>
+          <button class="ev-tab-btn" data-tab="kekurangan">Kekurangan</button>
         </div>
+      </div>
+
+      <div class="ev-comparison-wrapper">
+        <!-- Kolom Kiri: Ilustrasi Karakter & Thought Bubbles -->
+        <div class="ev-illustration-card">
+          <svg
+            class="ev-hero-svg"
+            viewBox="0 0 380 500"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <!-- Background Card Rounded -->
+            <rect width="380" height="500" rx="36" fill="url(#bg-green-grad)" />
+
+            <!-- Dedaunan / Garis Organik Latar Belakang -->
+            <g
+              opacity="0.3"
+              stroke="#004d25"
+              stroke-width="3"
+              stroke-linecap="round"
+              fill="none"
+            >
+              <path d="M190 350 Q160 270 120 220 Q100 195 70 180" />
+              <path d="M120 220 Q150 180 160 140" />
+              <path d="M190 350 Q230 260 270 210 Q290 190 320 180" />
+              <path d="M260 225 Q235 180 230 140" />
+              <path d="M190 340 Q130 300 80 300" />
+              <path d="M190 340 Q250 300 300 300" />
+            </g>
+            <!-- Aksen Titik Daun Kuning/Oranye -->
+            <circle cx="160" cy="140" r="5" fill="#facc15" />
+            <circle cx="230" cy="140" r="5" fill="#facc15" />
+            <circle cx="70" cy="180" r="4" fill="#facc15" />
+            <circle cx="320" cy="180" r="4" fill="#facc15" />
+
+            <!-- Balon Pikiran Kiri: THUMBS UP 👍 (Keuntungan) -->
+            <g class="thought-bubble-left">
+              <!-- Garis penghubung titik pikiran -->
+              <circle cx="168" cy="235" r="5" fill="#ffffff" opacity="0.9" />
+              <circle cx="152" cy="200" r="8" fill="#ffffff" opacity="0.95" />
+              <!-- Lingkaran Utama -->
+              <circle
+                cx="122"
+                cy="135"
+                r="44"
+                fill="#ffffff"
+                filter="url(#bubble-shadow)"
+              />
+              <!-- Ikon Thumbs Up Hijau -->
+              <path
+                d="M112 127 V147 H104 C102.895 147 102 146.105 102 145 V129 C102 127.895 102.895 127 104 127 H112 Z"
+                fill="#00c853"
+              />
+              <path
+                d="M115 147 H130.5 C132.3 147 133.8 145.8 134.2 144.1 L136.8 133.1 C137.3 130.8 135.6 128.7 133.3 128.7 H125.5 L127.8 117.5 C128.1 115.8 127 114.2 125.3 114.2 C124.3 114.2 123.3 114.7 122.7 115.5 L115 126.5 V147 Z"
+                fill="#00e676"
+                stroke="#00c853"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <!-- Dekorasi Emoji / Love -->
+              <text x="82" y="114" font-size="14">😊</text>
+              <text x="146" y="142" font-size="13">✨</text>
+              <path
+                d="M98 154 C98 151.5 101 149.5 103.5 151.5 C106 149.5 109 151.5 109 154 C109 157.5 103.5 160.5 103.5 160.5 C103.5 160.5 98 157.5 98 154 Z"
+                fill="#ef4444"
+              />
+            </g>
+
+            <!-- Balon Pikiran Kanan: THUMBS DOWN 👎 (Kekurangan) -->
+            <g class="thought-bubble-right">
+              <!-- Garis penghubung titik pikiran -->
+              <circle cx="212" cy="235" r="5" fill="#ffffff" opacity="0.9" />
+              <circle cx="228" cy="200" r="8" fill="#ffffff" opacity="0.95" />
+              <!-- Lingkaran Utama -->
+              <circle
+                cx="258"
+                cy="135"
+                r="44"
+                fill="#ffffff"
+                filter="url(#bubble-shadow)"
+              />
+              <!-- Ikon Thumbs Down Merah -->
+              <path
+                d="M268 143 V123 H276 C277.105 123 278 123.895 278 125 V141 C278 142.105 277.105 143 276 143 H268 Z"
+                fill="#dc2626"
+              />
+              <path
+                d="M265 123 H249.5 C247.7 123 246.2 124.2 245.8 125.9 L243.2 136.9 C242.7 139.2 244.4 141.3 246.7 141.3 H254.5 L252.2 152.5 C251.9 154.2 253 155.8 254.7 155.8 C255.7 155.8 256.7 155.3 257.3 154.5 L265 143.5 V123 Z"
+                fill="#ef4444"
+                stroke="#dc2626"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <!-- Dekorasi Petir / Stress -->
+              <text x="225" y="116" font-size="14">⚡</text>
+              <text x="282" y="156" font-size="14">⚡</text>
+            </g>
+
+            <!-- Karakter Pria Berjanggut Pemikir -->
+            <!-- Lengan Kiri (Gesture Bingung/Menimbang) -->
+            <path
+              d="M125 410 Q70 395 55 350 Q52 342 58 335 Q65 330 72 338 Q88 368 120 380"
+              fill="#ffffff"
+              stroke="#1e293b"
+              stroke-width="3.5"
+              stroke-linecap="round"
+            />
+            <!-- Tangan Kiri Terbuka -->
+            <path
+              d="M52 340 C46 332 44 322 47 312 C49 308 55 310 55 315 C55 310 60 307 63 311 C65 307 70 308 70 314 C73 312 78 316 75 323 C73 331 66 345 56 344 Z"
+              fill="#fecaca"
+              stroke="#1e293b"
+              stroke-width="3"
+            />
+
+            <!-- Lengan Kanan (Gesture Bingung/Menimbang) -->
+            <path
+              d="M255 410 Q310 395 325 350 Q328 342 322 335 Q315 330 308 338 Q292 368 260 380"
+              fill="#ffffff"
+              stroke="#1e293b"
+              stroke-width="3.5"
+              stroke-linecap="round"
+            />
+            <!-- Tangan Kanan Terbuka -->
+            <path
+              d="M328 340 C334 332 336 322 333 312 C331 308 325 310 325 315 C325 310 320 307 317 311 C315 307 310 308 310 314 C307 312 302 316 305 323 C307 331 314 345 324 344 Z"
+              fill="#fecaca"
+              stroke="#1e293b"
+              stroke-width="3"
+            />
+
+            <!-- Badan / Baju Putih Kaos -->
+            <path
+              d="M115 500 L118 410 Q145 375 190 375 Q235 375 262 410 L265 500 Z"
+              fill="#ffffff"
+              stroke="#1e293b"
+              stroke-width="3.5"
+            />
+            <!-- Kerah Baju -->
+            <path
+              d="M165 377 Q190 405 215 377"
+              fill="none"
+              stroke="#1e293b"
+              stroke-width="3.5"
+              stroke-linecap="round"
+            />
+            <!-- Lipatan Baju Sederhana -->
+            <path
+              d="M190 420 L190 470"
+              stroke="#cbd5e1"
+              stroke-width="3"
+              stroke-linecap="round"
+            />
+            <path
+              d="M190 445 L202 460"
+              stroke="#cbd5e1"
+              stroke-width="3"
+              stroke-linecap="round"
+            />
+
+            <!-- Leher -->
+            <path
+              d="M172 345 L172 385 Q190 395 208 385 L208 345 Z"
+              fill="#fed7aa"
+              stroke="#1e293b"
+              stroke-width="3.5"
+            />
+
+            <!-- Kepala / Wajah -->
+            <path
+              d="M152 300 C152 265 168 245 190 245 C212 245 228 265 228 300 C228 335 212 360 190 360 C168 360 152 335 152 300 Z"
+              fill="#fed7aa"
+              stroke="#1e293b"
+              stroke-width="3.5"
+            />
+
+            <!-- Telinga Kiri & Kanan -->
+            <circle
+              cx="150"
+              cy="305"
+              r="9"
+              fill="#fed7aa"
+              stroke="#1e293b"
+              stroke-width="3"
+            />
+            <circle
+              cx="230"
+              cy="305"
+              r="9"
+              fill="#fed7aa"
+              stroke="#1e293b"
+              stroke-width="3"
+            />
+
+            <!-- Janggut & Kumis Tebal Hitam -->
+            <path
+              d="M152 308 C152 348 165 372 190 372 C215 372 228 348 228 308 C225 320 215 328 190 328 C165 328 155 320 152 308 Z"
+              fill="#1e293b"
+            />
+            <!-- Mulut / Garis di Janggut -->
+            <path
+              d="M184 340 Q190 344 196 340"
+              stroke="#ffffff"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              fill="none"
+            />
+
+            <!-- Hidung -->
+            <path
+              d="M188 296 Q192 305 186 310 Q192 312 195 308"
+              stroke="#1e293b"
+              stroke-width="3"
+              stroke-linecap="round"
+              fill="none"
+            />
+
+            <!-- Mata Kiri & Kanan (Melirik ke Atas Berpikir) -->
+            <ellipse cx="174" cy="292" rx="4" ry="4.5" fill="#1e293b" />
+            <circle cx="175.5" cy="290.5" r="1.5" fill="#ffffff" />
+            <ellipse cx="206" cy="292" rx="4" ry="4.5" fill="#1e293b" />
+            <circle cx="207.5" cy="290.5" r="1.5" fill="#ffffff" />
+
+            <!-- Alis Mata -->
+            <path
+              d="M167 283 Q175 280 182 284"
+              stroke="#1e293b"
+              stroke-width="3.5"
+              stroke-linecap="round"
+            />
+            <path
+              d="M198 284 Q205 280 213 283"
+              stroke="#1e293b"
+              stroke-width="3.5"
+              stroke-linecap="round"
+            />
+
+            <!-- Rambut Atas Hitam Modern -->
+            <path
+              d="M150 290 C146 260 160 240 190 240 C220 240 234 260 230 290 C225 272 215 264 190 264 C165 264 155 272 150 290 Z"
+              fill="#1e293b"
+            />
+
+            <!-- Definitions: Gradients and Shadows -->
+            <defs>
+              <linearGradient
+                id="bg-green-grad"
+                x1="0"
+                y1="0"
+                x2="380"
+                y2="500"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop offset="0%" stop-color="#00e676" />
+                <stop offset="100%" stop-color="#00c853" />
+              </linearGradient>
+              <filter
+                id="bubble-shadow"
+                x="-30%"
+                y="-30%"
+                width="160%"
+                height="160%"
+              >
+                <feDropShadow
+                  dx="0"
+                  dy="6"
+                  stdDeviation="8"
+                  flood-opacity="0.15"
+                />
+              </filter>
+            </defs>
+          </svg>
+        </div>
+
+        <!-- Kolom Kanan: Daftar Kartu (Tab Keuntungan & Tab Kekurangan) -->
+        <div class="ev-cards-column">
+          <!-- Tab Pane: KEUNTUNGAN (Default Active) -->
+          <div class="ev-tab-pane active" id="pane-keuntungan">
+            <!-- Kartu 1: Jejak Karbon -->
+            <div class="ev-feature-card">
+              <div class="ev-card-icon-box green-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="28"
+                  height="28"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M11 20A7 7 0 0 1 4 13C4 7 11 3 11 3S18 7 18 13A7 7 0 0 1 11 20Z"
+                  ></path>
+                  <path d="M11 13V20"></path>
+                  <path d="M8 10L11 13L14 10"></path>
+                </svg>
+                <span class="icon-subtext">CO₂</span>
+              </div>
+              <div class="ev-card-content">
+                <h3>Mengurangi Jejak Karbon</h3>
+                <p>
+                  Kendaraan listrik tidak mengeluarkan CO2 dan gas rumah kaca,
+                  sehingga ramah lingkungan.
+                </p>
+              </div>
+            </div>
+
+            <!-- Kartu 2: Biaya Kepemilikan Rendah -->
+            <div class="ev-feature-card">
+              <div class="ev-card-icon-box green-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="28"
+                  height="28"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="9"></circle>
+                  <path d="M16 8L8 16"></path>
+                  <circle cx="9" cy="9" r="1.5" fill="currentColor"></circle>
+                  <circle cx="15" cy="15" r="1.5" fill="currentColor"></circle>
+                  <path d="M12 19V15M12 19L10 17M12 19L14 17"></path>
+                </svg>
+              </div>
+              <div class="ev-card-content">
+                <h3>Biaya Kepemilikan Rendah Dan Perawatan Mudah</h3>
+                <p>
+                  Karena komponen lebih sedikit, kendaraan listrik tidak
+                  memerlukan banyak perawatan, juga tidak banyak komponen yang
+                  memerlukan penggantian meskipun digunakan dalam jangka waktu
+                  lama.
+                </p>
+              </div>
+            </div>
+
+            <!-- Kartu 3: Performa Terbaik -->
+            <div class="ev-feature-card">
+              <div class="ev-card-icon-box green-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="28"
+                  height="28"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M12 2A10 10 0 0 0 2 12C2 15.3 3.6 18.2 6.1 20"
+                  ></path>
+                  <path
+                    d="M12 2A10 10 0 0 1 22 12C22 15.3 20.4 18.2 17.9 20"
+                  ></path>
+                  <path d="M12 6V12L15 9"></path>
+                  <circle cx="12" cy="12" r="2" fill="currentColor"></circle>
+                </svg>
+              </div>
+              <div class="ev-card-content">
+                <h3>Performa Terbaik</h3>
+                <p>
+                  Motor listrik bereaksi lebih cepat dibandingkan mesin mekanis,
+                  sehingga menawarkan kelincahan dan torsi besar sehingga
+                  menghasilkan pengendaraan yang lebih santai dan polusi suara
+                  lebih sedikit.
+                </p>
+              </div>
+            </div>
+
+            <!-- Kartu 4: Kabin Senyap Dan Luas -->
+            <div class="ev-feature-card">
+              <div class="ev-card-icon-box green-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="28"
+                  height="28"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <polyline points="9 21 3 21 3 15"></polyline>
+                  <line x1="21" y1="3" x2="14" y2="10"></line>
+                  <line x1="3" y1="21" x2="10" y2="14"></line>
+                </svg>
+              </div>
+              <div class="ev-card-content">
+                <h3>Kabin Senyap Dan Luas</h3>
+                <p>
+                  Mobil listrik menggunakan komponen yang jauh lebih sedikit
+                  dibandingkan mobil ICE sehingga memungkinkan rancangan kabin
+                  luas dan banyak ruang penyimpanan.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab Pane: KEKURANGAN -->
+          <div class="ev-tab-pane" id="pane-kekurangan">
+            <!-- Kartu 1: Waktu Pengisian Daya -->
+            <div class="ev-feature-card">
+              <div class="ev-card-icon-box red-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="28"
+                  height="28"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="9"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <div class="ev-card-content">
+                <h3>Waktu Pengisian Daya Baterai</h3>
+                <p>
+                  Pengisian daya membutuhkan durasi lebih lama dibanding mengisi
+                  bensin konvensional, berkisar antara 20–30 menit (DC Fast
+                  Charging) hingga 6–8 jam jika menggunakan charger rumah.
+                </p>
+              </div>
+            </div>
+
+            <!-- Kartu 2: Infrastruktur SPKLU -->
+            <div class="ev-feature-card">
+              <div class="ev-card-icon-box red-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="28"
+                  height="28"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"
+                  ></path>
+                  <line x1="12" y1="12" x2="12" y2="16"></line>
+                  <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                </svg>
+              </div>
+              <div class="ev-card-content">
+                <h3>Infrastruktur SPKLU Masih Berkembang</h3>
+                <p>
+                  Meskipun jaringan stasiun pengisian daya bertumbuh pesat di
+                  kota-kota besar dan jalan tol, ketersediaan di daerah
+                  terpencil masih dalam proses ekspansi berkelanjutan.
+                </p>
+              </div>
+            </div>
+
+            <!-- Kartu 3: Investasi Awal -->
+            <div class="ev-feature-card">
+              <div class="ev-card-icon-box red-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="28"
+                  height="28"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="12" y1="1" x2="12" y2="23"></line>
+                  <path
+                    d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
+                  ></path>
+                </svg>
+              </div>
+              <div class="ev-card-content">
+                <h3>Investasi Awal Harga Beli</h3>
+                <p>
+                  Harga beli mobil listrik baru umumnya masih sedikit lebih
+                  tinggi dibandingkan mobil konvensional, meskipun terkompensasi
+                  oleh biaya operasional harian yang sangat murah.
+                </p>
+              </div>
+            </div>
+
+            <!-- Kartu 4: Jarak Tempuh & Kondisi -->
+            <div class="ev-feature-card">
+              <div class="ev-card-icon-box red-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="28"
+                  height="28"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="ev-card-content">
+                <h3>Jangkauan Tergantung Kondisi Jalan & Cuaca</h3>
+                <p>
+                  Jarak tempuh baterai dapat terpengaruh oleh gaya mengemudi
+                  agresif, kecepatan tinggi konstan di jalan tol, suhu ekstrim,
+                  atau membawa beban muatan maksimal.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- 5. Teknologi -->
     <section id="teknologi" class="bg-alt">
-        <h2 class="section-title">Teknologi Modern</h2>
-        <div class="grid-3">
-            <div class="card">
-                <h3>Baterai Lithium-ion</h3>
-                <p>Kepadatan energi tinggi untuk pengereman jarak jauh dan ketahanan lama.</p>
-            </div>
-            <div class="card">
-                <h3>Regenerative Braking</h3>
-                <p>Mengisi ulang daya baterai otomatis saat pedal rem ditekan.</p>
-            </div>
-            <div class="card">
-                <h3>Fast Charging</h3>
-                <p>Pengisian daya super cepat dari 10% hingga 80% dalam waktu singkat.</p>
-            </div>
-            <div class="card">
-                <h3>Bantuan Pengemudi (ADAS)</h3>
-                <p>Sistem keamanan aktif dengan pemantauan otomatis dan kendali jarak.</p>
-            </div>
-            <div class="card">
-                <h3>Smart Connectivity</h3>
-                <p>Integrasi langsung dengan smartphone untuk memantau status mobil.</p>
-            </div>
+      <h2 class="section-title">Teknologi Terdepan</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Baterai Solid-Density</h3>
+          <p>
+            Kepadatan energi tinggi dengan proteksi termal ganda untuk
+            keselamatan maksimal.
+          </p>
         </div>
+        <div class="card">
+          <h3>Regenerative Braking</h3>
+          <p>
+            Mengonversi energi pengereman menjadi daya baterai cadangan secara
+            otomatis.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Ultra Fast Charging</h3>
+          <p>
+            Pengisian daya kilat dari 10% ke 80% hanya dalam 20–30 menit di
+            stasiun DC.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Bantuan Otonom (ADAS)</h3>
+          <p>
+            Fitur keselamatan pintar adaptif mulai dari pengereman darurat
+            hingga lane assist.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Aplikasi Elevara Connect</h3>
+          <p>
+            Kontrol AC jarak jauh, cek baterai, dan kunci mobil melalui
+            smartphone Anda.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Over-The-Air Update</h3>
+          <p>
+            Pembaruan sistem fitur mobil otomatis melalui internet tanpa perlu
+            ke bengkel.
+          </p>
+        </div>
+      </div>
     </section>
 
-    <!-- 6. Charging / Pengisian Daya -->
-    <section id="charging">
-        <h2 class="section-title">Pengisian Daya</h2>
-        <div class="grid-3">
-            <div class="card">
-                <h3>Cara Pengisian</h3>
-                <p>Cukup hubungkan nozzle pengisi daya dari stasiun atau wallbox ke port daya pada mobil.</p>
-            </div>
-            <div class="card">
-                <h3>Jenis Charger & Waktu</h3>
-                <p><strong>AC Home Charger:</strong> 6-8 Jam<br><strong>DC Fast Charging:</strong> 30-45 Menit</p>
-            </div>
-            <div class="card">
-                <h3>Stasiun Pengisian</h3>
-                <p>Terhubung ke ribuan jaringan SPKLU yang tersebar di kota-kota besar.</p>
-            </div>
+    <!-- 6. Charging / Cara Merawat Baterai EV Anda -->
+    <section id="charging" class="battery-care-section">
+      <div class="battery-care-wrapper">
+        <!-- Kolom Kiri: Visual 3D Mobil & Charging Station -->
+        <div class="battery-care-card">
+          <div class="battery-care-badge-icon">
+            <svg
+              viewBox="0 0 24 24"
+              width="36"
+              height="36"
+              fill="none"
+              stroke="rgba(255,255,255,0.9)"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+              <path d="M2 17l10 5 10-5"></path>
+              <path d="M2 12l10 5 10-5"></path>
+            </svg>
+          </div>
+          <img
+            src="charging_care.jpg"
+            alt="Pengisian Daya & Perawatan Baterai EV"
+            class="battery-care-img"
+          />
         </div>
+
+        <!-- Kolom Kanan: Panduan Cara Merawat Baterai EV Anda -->
+        <div class="battery-care-content">
+          <h2 class="battery-care-title">Cara Merawat Baterai EV Anda</h2>
+
+          <div class="battery-tips-list">
+            <!-- Poin 1 -->
+            <div class="battery-tip-item">
+              <h3>Hindari Paparan Suhu Tinggi</h3>
+              <p>
+                Sebagian besar kerusakan terjadi ketika mobil diparkir dalam
+                suhu yang sangat tinggi. Untuk menjaga suhu tetap terkendali
+                untuk efisiensi optimal, sistem kontrol suhu otomatis di EV akan
+                bekerja dan menguras baterai.
+              </p>
+            </div>
+
+            <!-- Poin 2 -->
+            <div class="battery-tip-item">
+              <h3>Jangan Mengisi Baterai 100%</h3>
+              <p>
+                Mengisi daya baterai hingga penuh bukanlah ide yang baik karena
+                akan memengaruhi masa pakai unit secara keseluruhan. Kebanyakan
+                kendaraan listrik saat ini dilengkapi dengan sistem manajemen
+                baterai yang membantu menghindari pengisian daya berlebih.
+              </p>
+            </div>
+
+            <!-- Poin 3 -->
+            <div class="battery-tip-item">
+              <h3>Hindari Terlalu Sering Menggunakan Pengisian Daya Cepat</h3>
+              <p>
+                Meskipun fast charging menawarkan kenyamanan luar biasa saat
+                baterai hampir habis, melakukan hal ini secara sering akan
+                membebani baterai dan mengurangi usianya.
+              </p>
+            </div>
+
+            <!-- Poin 4 -->
+            <div class="battery-tip-item">
+              <h3>
+                Pertahankan Kondisi Baterai Optimal Selama Kondisi Ideal Jangka
+                Panjang
+              </h3>
+              <p>
+                Para ahli tidak menyarankan membiarkan EV dalam waktu lama
+                dengan daya baterai terisi penuh atau kosong, karena akan
+                menyebabkan degradasi. Di sini pengisi daya berjangka waktu akan
+                berguna.
+              </p>
+            </div>
+
+            <!-- Poin 5 -->
+            <div class="battery-tip-item">
+              <h3>Mengemudi Hemat Baterai</h3>
+              <p>
+                Masa pakai baterai dapat ditingkatkan dengan cara berkendara
+                efisien. Mencakup pengereman regeneratif, akselerasi terkontrol,
+                dan tekanan ban yang tepat.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- 7. Gallery -->
     <section id="galeri" class="bg-alt">
-        <h2 class="section-title">Galeri Elevara</h2>
-        <div class="gallery-grid">
-            <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=400&q=80" alt="Tampak Depan">
-            <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=400&q=80" alt="Tampak Samping">
-            <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=400&q=80" alt="Interior">
-            <img src="https://images.unsplash.com/photo-1508974239320-0a029497e820?auto=format&fit=crop&w=400&q=80" alt="Dashboard">
-            <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=400&q=80" alt="Charging">
-        </div>
+      <h2 class="section-title">Galeri Elevara</h2>
+      <div class="gallery-grid">
+        <img
+          src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=400&q=80"
+          alt="Tampak Depan"
+        />
+        <img
+          src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=400&q=80"
+          alt="Tampak Samping"
+        />
+        <img
+          src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=400&q=80"
+          alt="Interior Mewah"
+        />
+        <img
+          src="https://images.unsplash.com/photo-1508974239320-0a029497e820?auto=format&fit=crop&w=400&q=80"
+          alt="Dashboard Modern"
+        />
+        <img
+          src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=400&q=80"
+          alt="Fast Charging"
+        />
+      </div>
     </section>
 
-    <!-- 8. Berita / Artikel -->
-    <section id="berita">
-        <h2 class="section-title">Berita & Artikel</h2>
-        <div class="grid-4">
-            <div class="card">
-                <h4>Apa Itu Mobil Listrik?</h4>
-                <p>Panduan lengkap memahami teknologi baterai dan efisiensinya...</p>
-            </div>
-            <div class="card">
-                <h4>Keuntungan Menggunakan EV</h4>
-                <p>Alasan mengapa beralih ke mobil listrik adalah keputusan tepat...</p>
-            </div>
-            <div class="card">
-                <h4>Cara Merawat Baterai EV</h4>
-                <p>Tips simpel agar usia pakai baterai mobil Anda tahan lama...</p>
-            </div>
-            <div class="card">
-                <h4>Perkembangan EV di Indonesia</h4>
-                <p>Bagaimana ekosistem mobil listrik bertumbuh sangat pesat...</p>
-            </div>
+    <!-- 8. Berita Mobil (Carousel & Modern News Cards) -->
+    <section id="berita" class="news-section">
+      <div class="news-header-wrapper">
+        <h2 class="news-main-title">Berita Mobil</h2>
+        <div class="news-slider-controls">
+          <button
+            class="news-nav-btn"
+            id="newsPrevBtn"
+            aria-label="Berita Sebelumnya"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              width="18"
+              height="18"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <button
+            class="news-nav-btn"
+            id="newsNextBtn"
+            aria-label="Berita Berikutnya"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              width="18"
+              height="18"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
         </div>
+      </div>
+
+      <div class="news-carousel-container" id="newsCarousel">
+        <!-- Berita 1: Hongqi E-HS9 -->
+        <article class="news-card" data-news-id="1">
+          <div class="news-img-box">
+            <img
+              src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=600&q=80"
+              alt="Hongqi E-HS9"
+            />
+          </div>
+          <div class="news-card-body">
+            <h3 class="news-title">
+              Hongqi E-HS9 Resmi Hadir di Indonesia, SUV Listrik Ultra-
+            </h3>
+            <p class="news-excerpt">
+              Pasar mobil listrik premium di Indonesia te...
+              <a
+                href="javascript:void(0)"
+                class="read-more-link"
+                onclick="openNewsDetail(1)"
+                >Baca Selengkapnya</a
+              >
+            </p>
+            <div class="news-meta">
+              <span class="news-author">Anindiyo Pradhana</span>,
+              <span class="news-date">27 Agu, 2026</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Berita 2: Suzuki e-Sky -->
+        <article class="news-card" data-news-id="2">
+          <div class="news-img-box">
+            <img
+              src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=600&q=80"
+              alt="Suzuki e-Sky"
+            />
+          </div>
+          <div class="news-card-body">
+            <h3 class="news-title">
+              Suzuki e-Sky Mendebut Siap Tantang Honda N-One e: dan
+            </h3>
+            <p class="news-excerpt">
+              Pabrikan asal Hamamatsu, Suzuki, ikut r...
+              <a
+                href="javascript:void(0)"
+                class="read-more-link"
+                onclick="openNewsDetail(2)"
+                >Baca Selengkapnya</a
+              >
+            </p>
+            <div class="news-meta">
+              <span class="news-author">Anindiyo Pradhana</span>,
+              <span class="news-date">26 Agu, 2026</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Berita 3: BYD Racco -->
+        <article class="news-card" data-news-id="3">
+          <div class="news-img-box">
+            <img
+              src="https://images.unsplash.com/photo-1619767886558-efdc259cde1a?auto=format&fit=crop&w=600&q=80"
+              alt="BYD Racco"
+            />
+          </div>
+          <div class="news-card-body">
+            <h3 class="news-title">
+              Menanti Kejutan BYD Racco di Indonesia: Akankah Jadi
+            </h3>
+            <p class="news-excerpt">
+              BYD sudah cukup agresif dalam menggelon...
+              <a
+                href="javascript:void(0)"
+                class="read-more-link"
+                onclick="openNewsDetail(3)"
+                >Baca Selengkapnya</a
+              >
+            </p>
+            <div class="news-meta">
+              <span class="news-author">Anindiyo Pradhana</span>,
+              <span class="news-date">24 Agu, 2026</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Berita 4: Hongqi Legendaris -->
+        <article class="news-card" data-news-id="4">
+          <div class="news-img-box">
+            <img
+              src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=600&q=80"
+              alt="Hongqi Merek Legendaris"
+            />
+          </div>
+          <div class="news-card-body">
+            <h3 class="news-title">
+              Hongqi: Merek Legendaris dengan Sejarah Kenegaraan
+            </h3>
+            <p class="news-excerpt">
+              Lanskap industri otomotif nasional sa...
+              <a
+                href="javascript:void(0)"
+                class="read-more-link"
+                onclick="openNewsDetail(4)"
+                >Baca Selengkapnya</a
+              >
+            </p>
+            <div class="news-meta">
+              <span class="news-author">Anindiyo Pradhana</span>,
+              <span class="news-date">19 Agu, 2026</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Berita 5: Ultra Fast Charging -->
+        <article class="news-card" data-news-id="5">
+          <div class="news-img-box">
+            <img
+              src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=600&q=80"
+              alt="Ultra Fast Charging"
+            />
+          </div>
+          <div class="news-card-body">
+            <h3 class="news-title">
+              Infrastruktur SPKLU Ultra-Fast Charging Ditambah 50 Titik
+            </h3>
+            <p class="news-excerpt">
+              Pemerintah bersama konsorsium EV mempercepat p...
+              <a
+                href="javascript:void(0)"
+                class="read-more-link"
+                onclick="openNewsDetail(5)"
+                >Baca Selengkapnya</a
+              >
+            </p>
+            <div class="news-meta">
+              <span class="news-author">Anindiyo Pradhana</span>,
+              <span class="news-date">15 Agu, 2026</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Berita 6: Insentif Pajak EV -->
+        <article class="news-card" data-news-id="6">
+          <div class="news-img-box">
+            <img
+              src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=600&q=80"
+              alt="Insentif Pajak EV"
+            />
+          </div>
+          <div class="news-card-body">
+            <h3 class="news-title">
+              Insentif Pajak Pembelian Mobil Listrik Resmi Diperpanjang
+            </h3>
+            <p class="news-excerpt">
+              Kementerian Keuangan memastikan keringanan PPN...
+              <a
+                href="javascript:void(0)"
+                class="read-more-link"
+                onclick="openNewsDetail(6)"
+                >Baca Selengkapnya</a
+              >
+            </p>
+            <div class="news-meta">
+              <span class="news-author">Anindiyo Pradhana</span>,
+              <span class="news-date">10 Agu, 2026</span>
+            </div>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <!-- 9. FAQ -->
+    <!-- 9. FAQ Interaktif Accordion -->
     <section id="faq" class="bg-alt">
-        <h2 class="section-title">Pertanyaan Umum (FAQ)</h2>
-        <div class="faq-container">
-            <div class="card mb-10">
-                <strong>Berapa lama baterai mobil listrik bertahan?</strong>
-                <p>Rata-rata baterai dapat bertahan hingga 8-10 tahun penggunaan harian.</p>
-            </div>
-            <div class="card mb-10">
-                <strong>Berapa lama waktu charging?</strong>
-                <p>Antara 30 menit (DC Fast Charger) hingga 8 jam (AC Charger Rumahan).</p>
-            </div>
-            <div class="card mb-10">
-                <strong>Apakah cocok untuk perjalanan jauh?</strong>
-                <p>Sangat cocok, dengan jarak tempuh hingga 550 km dalam sekali pengisian penuh.</p>
-            </div>
+      <h2 class="section-title">Pertanyaan Umum (FAQ)</h2>
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Berapa lama daya tahan baterai mobil listrik?</span>
+            <span class="faq-toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Baterai Elevara dirancang untuk bertahan 8 hingga 10 tahun
+              pemakaian normal. Kami memberikan garansi resmi baterai hingga 8
+              tahun atau 160.000 km.
+            </p>
+          </div>
         </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Berapa lama waktu yang dibutuhkan untuk pengisian daya?</span>
+            <span class="faq-toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Dengan Home Wallbox (AC Charger), pengisian penuh membutuhkan
+              waktu 6-8 jam. Sedangkan dengan DC Fast Charging di SPKLU,
+              pengisian 10% ke 80% hanya membutuhkan waktu sekitar 20-30 menit.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span
+              >Apakah mobil listrik aman dikendarai saat banjir atau hujan
+              lebat?</span
+            >
+            <span class="faq-toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Ya, seluruh sistem kelistrikan dan baterai memiliki sertifikasi
+              tahan air IP67/IP68 dengan sistem pemutus arus otomatis (circuit
+              breaker) yang sangat aman dari korsleting.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Bagaimana cara melakukan servis berkala?</span>
+            <span class="faq-toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Mobil listrik tidak memerlukan ganti oli mesin. Servis berkala
+              hanya meliputi pengecekan rem, rotasi ban, filter kabin AC, dan
+              pemindaian diagnostik sistem komputer setiap 15.000 km.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- 10. Contact -->
+    <!-- 10. Contact Section -->
     <section id="kontak">
-        <h2 class="section-title">Hubungi Kami</h2>
-        <div class="contact-container">
-            <form action="#">
-                <input type="text" placeholder="Nama Lengkap" required>
-                <input type="email" placeholder="Alamat Email" required>
-                <input type="tel" placeholder="Nomor Telepon" required>
-                <textarea rows="4" placeholder="Pesan Anda"></textarea>
-                <button type="submit" class="btn">Kirim Pesan</button>
-            </form>
-            <div>
-                <h3>Showroom Utama</h3>
-                <p>Jl. Otomotif Listrik No. 88, Jakarta Selatan</p>
-                <p>Email: info@elevara.co.id</p>
-                <p>Telp: (021) 555-0199</p>
-                <div class="map-placeholder">
-                    [ Peta Google Maps ]
-                </div>
-            </div>
+      <h2 class="section-title">Hubungi Kami & Test Drive</h2>
+      <div class="contact-container">
+        <form id="contactForm">
+          <input
+            type="text"
+            id="name"
+            placeholder="Nama Lengkap Anda"
+            required
+          />
+          <input type="email" id="email" placeholder="Alamat Email" required />
+          <input
+            type="tel"
+            id="phone"
+            placeholder="Nomor WhatsApp / Telepon"
+            required
+          />
+          <textarea
+            id="message"
+            rows="4"
+            placeholder="Tuliskan pesan atau jadwal test drive yang diinginkan..."
+            required
+          ></textarea>
+          <button type="submit" class="btn btn-full">Kirim Pesan</button>
+        </form>
+        <div class="contact-info-card">
+          <h3>Showroom Utama Elevara</h3>
+          <p>📍 Jl. Otomotif Listrik No. 88, Jakarta Selatan</p>
+          <p>✉️ Email: info@elevara.co.id</p>
+          <p>📞 Telp: (021) 555-0199 / WA: 0812-3456-7890</p>
+          <p>⏰ Jam Operasional: Senin - Minggu (08.30 - 20.00 WIB)</p>
+          <div class="map-placeholder">
+            <a
+              href="https://www.google.com/maps/place/SMK+TI+Bali+Global+Badung/@-8.6264437,115.1816154,17z/data=!3m1!4b1!4m6!3m5!1s0x2dd238b443f3470b:0xed54cf03e1904bf3!8m2!3d-8.6264437!4d115.1816154!16s%2Fg%2F1hm1tvkm_?authuser=0&entry=ttu&g_ep=EgoyMDI2MDgzMC4wIKXMDSoASAFQAw%3D%3D"
+              target="blank"
+              >Lihat Lokasi</a
+            >
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- 11. Footer -->
     <footer>
-        <div class="logo">ELEVARA</div>
-        <div class="footer-links">
-            <a href="#home">Home</a> | 
-            <a href="#mobil">Mobil</a> | 
-            <a href="#keunggulan">Keunggulan</a> | 
-            <a href="#kontak">Kontak</a>
-        </div>
-        <p>Follow us: @elevara.ev (Instagram / Facebook / X)</p>
-        <div class="copyright">
-            Copyright © 2026 Elevara. All rights reserved.
-        </div>
+      <a href="index.html" class="logo">
+        <img src="logo.png" alt="Logo Elevara" />
+        <span class="logo-text">ELEVA<span>RA</span></span>
+      </a>
+      <div class="footer-links">
+        <a href="index.html#home">Home</a> •
+        <a href="index.html#tentang">Tentang</a> •
+        <a href="index.html#mobil">Mobil</a> •
+        <a href="index.html#teknologi">Teknologi</a> •
+        <a href="index.html#galeri">Galeri</a> •
+        <a href="index.html#faq">FAQ</a> •
+        <a href="index.html#kontak">Kontak</a>
+      </div>
+      <p>Follow us: @elevara.ev (Instagram / Facebook / YouTube)</p>
+      <div class="copyright">
+        Copyright © 2026 Elevara Motor Corp. All rights reserved.
+      </div>
     </footer>
 
-</body>
+    <!-- Modal Detail Mobil (Interaktif dengan JS) -->
+    <div class="modal-backdrop" id="carModal">
+      <div class="modal-content">
+        <button
+          class="modal-close-btn"
+          id="modalClose"
+          aria-label="Tutup Detail"
+        >
+          &times;
+        </button>
+        <div id="modalBody">
+          <!-- Konten detail mobil akan diisi secara dinamis oleh JavaScript -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Detail Berita (Interaktif dengan JS) -->
+    <div class="modal-backdrop" id="newsModal">
+      <div class="modal-content news-modal-content">
+        <button
+          class="modal-close-btn"
+          id="newsModalClose"
+          aria-label="Tutup Berita"
+        >
+          &times;
+        </button>
+        <div id="newsModalBody">
+          <!-- Konten detail artikel berita akan diisi oleh JavaScript -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Notifikasi Toast (Interaktif dengan JS) -->
+    <div class="toast" id="toast"></div>
+
+    <!-- Tombol Floating Scroll To Top -->
+    <button
+      class="scroll-top-btn"
+      id="scrollTopBtn"
+      aria-label="Kembali ke atas"
+    >
+      <svg
+        viewBox="0 0 24 24"
+        width="22"
+        height="22"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </button>
+
+    <!-- Menghubungkan File JavaScript -->
+    <script src="script.js"></script>
+  </body>
 </html>
